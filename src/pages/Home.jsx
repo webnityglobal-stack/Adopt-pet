@@ -301,7 +301,7 @@ function PromisePreview() {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -325,7 +325,7 @@ function PromisePreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
+          > */}
             <SectionLabel>Our Promise</SectionLabel>
 
             <h2 className="text-3xl font-semibold leading-tight text-[#302820] sm:text-4xl lg:text-5xl">
@@ -377,7 +377,7 @@ function PromisePreview() {
               Read Our Promise
               <ArrowRight size={17} />
             </Link>
-          </motion.div>
+          {/* </motion.div> */}
         </div>
       </div>
     </section>
