@@ -43,30 +43,24 @@ export default function OurPromise() {
   return (
     <main className="overflow-hidden bg-[#f8f5ef] text-[#302820]">
 
-      {/* HERO SECTION */}
-      <section className="px-5 pb-10 pt-10 sm:px-8 sm:pb-28 sm:pt-10 lg:px-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <section className="px-5 pb-16 pt-10 sm:px-8 sm:pb-24 sm:pt-14 lg:px-10 lg:pb-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
           {/* HERO CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="order-2 lg:order-1"
-          >
+          <div className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#e9e4d9] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#526b55] sm:text-xs">
               <Heart size={14} />
               What We Believe In
             </span>
 
-            <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.12] tracking-tight text-[#302820] sm:text-5xl md:text-6xl lg:mt-6 lg:text-7xl">
               Every paw deserves a
               <span className="block font-serif italic text-[#71866a]">
                 promise of love.
               </span>
             </h1>
 
-            <p className="mt-6 max-w-lg text-sm leading-7 text-[#81766b] sm:mt-7 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-lg text-sm leading-7 text-[#81766b] sm:mt-6 sm:text-base sm:leading-8">
               Finding a pet a home is just the beginning. Our promise is to
               make every adoption thoughtful, every beginning safe and every
               bond full of love.
@@ -74,41 +68,30 @@ export default function OurPromise() {
 
             <Link
               to="/find-a-pet"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#253b32] px-7 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#3b5848]"
+              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#253b32] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#3b5848] sm:mt-8 sm:py-4"
             >
               Find Your Companion
               <ArrowRight size={17} />
             </Link>
-          </motion.div>
+          </div>
 
-          {/* RUNNING DOG VIDEO */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative order-1 lg:order-2"
-          >
-            <div className="relative overflow-hidden rounded-[25px] sm:rounded-[35px]">
-              <video
-                src="/videos/running-dog.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="h-[300px] w-full object-cover sm:h-[430px] md:h-[500px] lg:h-[560px]"
+          {/* ADOPTION IMAGE */}
+          <div className="relative order-1 lg:order-2">
+            <div className="overflow-hidden rounded-[25px] shadow-xl sm:rounded-[35px]">
+              <img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=1200&auto=format&fit=crop&q=85"
+                alt="Golden retriever with its human companion"
+                className="h-[280px] w-full object-cover object-center sm:h-[420px] md:h-[480px] lg:h-[530px]"
               />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
             </div>
 
             {/* FLOATING CARD */}
-            <div className="absolute -bottom-7 left-4 max-w-[235px] rounded-2xl bg-white p-4 shadow-xl sm:-left-7 sm:max-w-[270px] sm:p-6">
+            <div className="absolute -bottom-6 left-3 max-w-[200px] rounded-2xl bg-white p-4 shadow-xl sm:-bottom-7 sm:left-6 sm:max-w-[200px] sm:p-6 lg:-left-6">
               <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#e9eee5] text-[#526b55]">
                 <PawPrint size={20} />
               </div>
 
-              <p className="font-serif text-lg font-semibold sm:text-xl">
+              <p className="font-serif text-lg font-semibold text-[#302820] sm:text-xl">
                 Love changes everything.
               </p>
 
@@ -116,7 +99,8 @@ export default function OurPromise() {
                 A loving home can make a world of difference.
               </p>
             </div>
-          </motion.div>
+          </div>
+
         </div>
       </section>
 

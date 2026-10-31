@@ -299,36 +299,50 @@ function PromisePreview() {
   return (
     <section className="bg-[#eae4d8] px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
 
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl"
-          >
-            <div className="relative h-[280px] sm:h-[370px] lg:h-[420px]">
-              <VideoPlayer src="/videos/running-dog.mp4" />
+        <div className="grid items-center gap-9 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#101a17]/60 to-transparent" />
+          {/* LEFT IMAGE */}
+          <div className="relative group">
+            <div className="relative h-[280px] overflow-hidden rounded-3xl shadow-xl sm:h-[400px] lg:h-[490px]">
 
-              <div className="absolute bottom-5 left-5 flex items-center gap-2 text-xs font-medium text-white sm:bottom-7 sm:left-7 sm:text-sm">
-                <Heart size={16} />
-                A promise of love
+              <img
+                src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&auto=format&fit=crop&q=85"
+                alt="Happy dog enjoying a loving home"
+                className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105"
+              />
+
+              {/* Image Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#17251e]/75 via-transparent to-transparent" />
+
+              {/* Bottom Text */}
+              <div className="absolute bottom-6 left-6 right-6 sm:bottom-9 sm:left-9">
+                <div className="mb-3 flex items-center gap-2 text-sm font-medium text-white">
+                  <Heart size={18} className="fill-[#e7c49c] text-[#e7c49c]" />
+                  A promise of love
+                </div>
+
+                <h3 className="max-w-md font-serif text-2xl italic text-white sm:text-3xl lg:text-4xl">
+                  Every little life deserves a little more love.
+                </h3>
               </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          > */}
+            {/* Decorative Badge */}
+            <div className="absolute -bottom-4 -right-2 rounded-2xl bg-[#253b32] px-5 py-3 text-white shadow-lg sm:-right-5 sm:px-7 sm:py-4">
+              <p className="font-serif text-xl italic">Love. Care. Home.</p>
+              <p className="mt-1 text-[10px] tracking-widest text-[#e7c49c]">
+                ADOPT • DON'T SHOP
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div className="pt-3 lg:pt-0">
+
             <SectionLabel>Our Promise</SectionLabel>
 
-            <h2 className="text-3xl font-semibold leading-tight text-[#302820] sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#302820] sm:text-4xl lg:text-5xl">
               Every pet deserves
               <span className="block font-serif italic text-[#71866a]">
                 a forever home.
@@ -342,6 +356,7 @@ function PromisePreview() {
             </p>
 
             <div className="mt-6 space-y-4">
+
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#253b32] text-[#e7c49c]">
                   <Heart size={19} />
@@ -368,16 +383,18 @@ function PromisePreview() {
                   A lifelong bond with your pet
                 </span>
               </div>
+
             </div>
 
             <Link
               to="/our-promise"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#253b32] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#9b7655]"
+              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#253b32] px-7 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#9b7655]"
             >
               Read Our Promise
               <ArrowRight size={17} />
             </Link>
-          {/* </motion.div> */}
+
+          </div>
         </div>
       </div>
     </section>
