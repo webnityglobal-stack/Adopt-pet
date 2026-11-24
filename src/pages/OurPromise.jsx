@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Heart,
   ShieldCheck,
@@ -39,7 +41,25 @@ const promises = [
   },
 ];
 
+
 export default function OurPromise() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const timer = setTimeout(() => {
+        document
+          .getElementById(location.hash.slice(1))
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      }, 200);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, location.hash]);
   return (
     <main className="overflow-hidden bg-[#f8f5ef] text-[#302820]">
 
@@ -245,6 +265,318 @@ export default function OurPromise() {
             Meet Your Companion
             <ArrowRight size={17} />
           </Link>
+        </div>
+      </section>
+
+      {/* Responsible Pet Care */}
+      <section
+        id="responsible-pet-care"
+        className="scroll-mt-28 py-20 bg-[#f6f8f3]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Heading */}
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <span className="inline-block px-4 py-2 rounded-full bg-[#e5eee5] text-[#315b40] text-sm font-semibold tracking-wide mb-5">
+              CARE BEYOND ADOPTION
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183b2b] leading-tight">
+              Responsible Pet Care
+              <span className="text-[#82a879]"> Starts With Love.</span>
+            </h2>
+
+            <p className="mt-5 text-slate-600 text-base sm:text-lg leading-8">
+              Every pet deserves a happy, healthy and safe life. Give your furry
+              companion the care, attention and love they need every single day.
+            </p>
+          </div>
+
+          {/* Care Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-7 border border-[#e8eee5] hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6">
+                🥗
+              </div>
+              <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                Proper Nutrition
+              </h3>
+              <p className="text-slate-600 text-sm leading-7">
+                Provide balanced meals and fresh drinking water to keep your pet
+                active, strong and healthy.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-7 border border-[#e8eee5] hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6">
+                🏡
+              </div>
+              <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                Safe Environment
+              </h3>
+              <p className="text-slate-600 text-sm leading-7">
+                Create a comfortable, clean and secure space where your pet feels
+                protected and loved.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-7 border border-[#e8eee5] hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6">
+                🐕
+              </div>
+              <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                Daily Exercise
+              </h3>
+              <p className="text-slate-600 text-sm leading-7">
+                Make time for walks, playtime and physical activities to support
+                your pet's fitness and happiness.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-2xl p-7 border border-[#e8eee5] hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6">
+                🩺
+              </div>
+              <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                Regular Health Care
+              </h3>
+              <p className="text-slate-600 text-sm leading-7">
+                Schedule routine veterinary checkups, vaccinations and timely
+                medical care for your companion.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Bottom Message */}
+          <div className="mt-12 bg-[#183b2b] rounded-3xl px-7 py-8 sm:px-10 sm:py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Love is a lifelong commitment.
+              </h3>
+              <p className="mt-3 text-white/75 leading-7">
+                Be their safe place, their best friend and their forever family.
+              </p>
+            </div>
+
+            <div className="text-5xl sm:text-6xl">
+              🐾
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Adoption Checklist */}
+      <section
+        id="adoption-checklist"
+        className="scroll-mt-28 py-20 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Left Content */}
+            <div>
+              <span className="inline-block px-4 py-2 rounded-full bg-[#edf4e9] text-[#315b40] text-sm font-semibold mb-5">
+                YOUR ADOPTION JOURNEY
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183b2b] leading-tight">
+                Ready to Welcome a
+                <span className="text-[#82a879]"> New Best Friend?</span>
+              </h2>
+
+              <p className="mt-5 text-slate-600 text-base leading-8">
+                Bringing a pet home is a beautiful experience and a lifelong
+                commitment. A little preparation can make your new companion's
+                transition easier, safer and happier.
+              </p>
+
+              <div className="mt-8 bg-[#f5f8f2] rounded-2xl p-6 border border-[#e6eee1]">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">💚</span>
+                  <h3 className="text-lg font-bold text-[#183b2b]">
+                    Remember
+                  </h3>
+                </div>
+                <p className="text-slate-600 text-sm leading-7">
+                  Adoption is not just about bringing a pet home. It's about
+                  giving them a forever home filled with care, patience and love.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Checklist */}
+            <div className="bg-[#f6f8f3] rounded-3xl p-6 sm:p-9">
+
+              <div className="flex items-center justify-between gap-4 mb-7">
+                <div>
+                  <p className="text-sm font-semibold text-[#82a879] uppercase tracking-wider">
+                    Before You Adopt
+                  </p>
+                  <h3 className="text-2xl font-bold text-[#183b2b] mt-2">
+                    Your Checklist
+                  </h3>
+                </div>
+                <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-3xl shadow-sm">
+                  📋
+                </div>
+              </div>
+
+              <div className="space-y-4">
+
+                {[
+                  "Be ready for a long-term responsibility.",
+                  "Prepare a safe and comfortable space.",
+                  "Arrange food, water bowls and basic supplies.",
+                  "Plan regular veterinary checkups.",
+                  "Give your new companion time and patience.",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-white p-4 rounded-xl border border-[#e8eee5] hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="w-7 h-7 shrink-0 rounded-full bg-[#e8f1e3] flex items-center justify-center text-[#527b4e] font-bold text-sm">
+                      ✓
+                    </div>
+                    <p className="text-slate-700 text-sm sm:text-base leading-6">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+
+              </div>
+
+              <p className="mt-6 text-sm text-[#527b4e] font-medium text-center">
+                A little preparation makes a big difference! 🐾
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Pet Wellness */}
+      <section
+        id="pet-wellness"
+        className="scroll-mt-28 py-20 bg-[#f6f8f3]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Heading */}
+          <div className="max-w-3xl mx-auto text-center mb-14">
+
+            <span className="inline-block px-4 py-2 rounded-full bg-white text-[#527b4e] text-sm font-semibold mb-5">
+              HAPPY PETS, HEALTHY LIVES
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183b2b] leading-tight">
+              A Healthier Life for Your
+              <span className="text-[#82a879]"> Furry Friend.</span>
+            </h2>
+
+            <p className="mt-5 text-slate-600 text-base sm:text-lg leading-8">
+              Your pet's wellness is about more than just good health.
+              It's about creating a balanced lifestyle filled with nutrition,
+              activity, comfort and affection.
+            </p>
+
+          </div>
+
+          {/* Wellness Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* Nutrition */}
+            <div className="group bg-white rounded-2xl overflow-hidden border border-[#e8eee5] hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-[#a7c795]"></div>
+              <div className="p-7">
+                <div className="w-16 h-16 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  🥕
+                </div>
+                <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                  Healthy Nutrition
+                </h3>
+                <p className="text-slate-600 text-sm leading-7">
+                  Choose nutritious, balanced meals and provide fresh water
+                  every day to support your pet's health.
+                </p>
+              </div>
+            </div>
+
+            {/* Exercise */}
+            <div className="group bg-white rounded-2xl overflow-hidden border border-[#e8eee5] hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-[#a7c795]"></div>
+              <div className="p-7">
+                <div className="w-16 h-16 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  ⚽
+                </div>
+                <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                  Active Lifestyle
+                </h3>
+                <p className="text-slate-600 text-sm leading-7">
+                  Daily walks, playtime and exercise help your furry friend
+                  stay fit, energetic and mentally active.
+                </p>
+              </div>
+            </div>
+
+            {/* Grooming */}
+            <div className="group bg-white rounded-2xl overflow-hidden border border-[#e8eee5] hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-[#a7c795]"></div>
+              <div className="p-7">
+                <div className="w-16 h-16 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  🛁
+                </div>
+                <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                  Regular Grooming
+                </h3>
+                <p className="text-slate-600 text-sm leading-7">
+                  Keep your pet clean with regular bathing, brushing,
+                  nail trimming and proper hygiene.
+                </p>
+              </div>
+            </div>
+
+            {/* Veterinary Care */}
+            <div className="group bg-white rounded-2xl overflow-hidden border border-[#e8eee5] hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-[#a7c795]"></div>
+              <div className="p-7">
+                <div className="w-16 h-16 rounded-2xl bg-[#edf4e9] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  🩺
+                </div>
+                <h3 className="text-xl font-bold text-[#183b2b] mb-3">
+                  Veterinary Care
+                </h3>
+                <p className="text-slate-600 text-sm leading-7">
+                  Regular health checkups, vaccinations and timely medical
+                  attention keep your companion healthy.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Banner */}
+          <div className="mt-12 rounded-3xl bg-[#183b2b] p-8 sm:p-10 text-center">
+            <div className="text-4xl mb-4">🐾</div>
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-white">
+              Their Health. Their Happiness. Your Love.
+            </h3>
+
+            <p className="mt-4 text-white/75 max-w-2xl mx-auto leading-7">
+              Every little act of care makes your pet's life better.
+              Give them the healthy and happy life they deserve.
+            </p>
+          </div>
+
         </div>
       </section>
     </main>

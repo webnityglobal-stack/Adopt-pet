@@ -16,10 +16,10 @@ const footerLinks = {
     { label: "Our promise", href: "/our-promise" },
   ],
   Helpful: [
-    { label: "Responsible pet care", href: "/our-promise" },
-    { label: "Adoption checklist", href: "/our-promise" },
-    { label: "Pet wellness", href: "/our-promise" },
-  ],
+  { label: "Responsible pet care", href: "/our-promise#responsible-pet-care" },
+  { label: "Adoption checklist", href: "/our-promise#adoption-checklist" },
+  { label: "Pet wellness", href: "/our-promise#pet-wellness" },
+],
 };
 
 function FacebookIcon({ size = 18 }) {
