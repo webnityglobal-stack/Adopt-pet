@@ -31,7 +31,6 @@ function VideoPlayer({ src, className = "" }) {
     </video>
   );
 }
-
 /* ---------------- SECTION LABEL ---------------- */
 
 function SectionLabel({ children, light = false }) {
