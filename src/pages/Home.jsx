@@ -13,7 +13,10 @@ import {
 
 /* ---------------- VIDEO COMPONENT ---------------- */
 
+
 function VideoPlayer({ src, className = "" }) {
+  const videoSrc = `${import.meta.env.BASE_URL}${src.replace(/^\/+/, "")}`;
+
   return (
     <video
       autoPlay
@@ -23,7 +26,7 @@ function VideoPlayer({ src, className = "" }) {
       preload="metadata"
       className={`block h-full w-full object-cover ${className}`}
     >
-      <source src={src} type="video/mp4" />
+      <source src={videoSrc} type="video/mp4" />
       Your browser does not support HTML video.
     </video>
   );
